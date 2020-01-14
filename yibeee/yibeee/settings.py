@@ -12,18 +12,17 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import json
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+with open('/etc/config.json') as config_file:
+    config = json.load(config_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open('/etc/config.json') as config_file:
-    config = json.load(config_file)
-
-
 SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -35,15 +34,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'home_page.apps.HomePageConfig',
+    'message.apps.MessageConfig',
     'django.contrib.admin',
-    'users.apps.UsersConfig',
-    'crispy_forms',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main_page.apps.MainPageConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +123,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 STATIC_URL = '/static/'
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -1,0 +1,102 @@
+h1{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 300px;
+} 
+
+p{
+    text-align: center;
+    margin-bottom: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    margin-left: 700px;
+    width: 120px;
+    height: 20px; 
+}
+
+body{
+    background-image: url("firspage.jpg");
+    background-position: center;
+    background-size: cover; 
+    box-sizing: border-box; 
+}
+
+
+.logo{
+    padding: 5px 0 0 80px;
+    width: 150px;
+    height: auto;
+}
+
+.menu-bar{
+    background: rgb(41, 41, 41);
+    text-align: center;
+    height: 60px;
+}
+
+.menu-bar .menu{
+    display: inline-flex;
+    list-style: none;
+    margin-left: 500px;
+}
+
+.menu-bar .menu li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.menu-bar .menu li{
+    width: 150px;
+    margin: 2px;
+    margin-left: 40px;
+}
+
+.menu-bar .fa{
+    margin-right: 5px;
+}
+
+/*.active, .menu-bar .menu li:hover{
+    background: #454545;
+    border-radius:5px;
+}*/
+
+.active{
+    background: #454545;
+    border-radius:3px;
+}
+
+.sub-menu-1{
+    display: none;
+}
+
+.menu-bar .menu li:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    background: rgb(41, 41, 41);
+    margin-top: 15px;
+    margin-left: -15px;
+}
+
+.menu-bar .menu li .sub-menu-1 .sub:hover{
+    display: block;
+    margin: 3px;
+}
+
+.menu-bar .menu li .sub-menu-1 .sub li:hover{
+    width: 150px;
+    padding: 5px;
+    border-bottom : 1 px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.menu-bar .menu li:hover .sub-menu-1 .menu li:last-child{
+    border-bottom:none;
+}
+   
+.menu-bar .menu li:hover .sub-menu-1 .menu li a:hover{
+    color: #e3e3e3;
+}

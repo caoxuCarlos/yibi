@@ -1,0 +1,11 @@
+{% extends 'message/base.html' %}
+{% block content %}
+    {% for message in messages %}
+        <h3>{{ message.title }}</h3>
+        <h3>{{ message.author }}</h3>
+        <h3>{{ message.email }}</h3>
+        <h3>{{ message.content }}</h3>
+        <h3>--------------</h3>
+        <h3>--------------</h3>
+    {% endfor %}
+{% endblock content %}

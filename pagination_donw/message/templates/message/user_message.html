@@ -1,0 +1,31 @@
+{% extends 'message/base.html' %}
+{% block content %}
+    <h2>Messages by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h2>
+    {% for message in messages %}
+        <h3><a href="{% url 'message-detail' message.id%}">{{ message.title }}</a></h3>
+        <h4><a href="{% url 'user-message' message.author.username %}">{{ message.author }}</a></h4>
+        <h4>{{ message.date_posted }}</h4>
+        <h3>============</h3>
+        <br>
+    {% endfor %}
+    {% if is_paginated %}
+        {% if page_obj.has_previous %}
+            <a href="?page=1">First</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <a href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3'%}
+                <a href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+    {% endif %}
+
+{% endblock content %}

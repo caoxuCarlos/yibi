@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load crispy_forms_tags %}
+    <title>RegisterPage</title>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fildset>
+                <legend>Join Today</legend>
+                {{ form|crispy}}
+            </fildset>
+            <div>
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div>
+            <small class="text-muted">
+            Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+            </small>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MessageCreation</title>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fildset>
+                <legend>Delete Message</legend>
+                <h2>Are you sure you want to delete the message "{{ object.title }}"?</h2>
+            </fildset>
+            <div>
+                <button type="submit">Yes, delete</button>
+                <a href="{% url 'message-detail' object.id %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

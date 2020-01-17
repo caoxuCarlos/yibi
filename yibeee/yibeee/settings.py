@@ -28,7 +28,7 @@ SECRET_KEY = config['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','www.yibeee.com']
 
 
 # Application definition
@@ -36,12 +36,14 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'home_page.apps.HomePageConfig',
     'message.apps.MessageConfig',
+    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -119,9 +121,25 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_REDIRECT_URL = '/'
+
+
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 STATIC_URL = '/static/'
+
+MEDIA_ROOT =os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'
+
+LOGIN_URL = 'login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.126.com'
+EMAIL_PORT = 25
+EMAIL_USE_TLS= True
+EMAIL_HOST_USER = 'yibeee@126.com'
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = 'yibeee@126.com'

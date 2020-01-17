@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <title>Yibeee</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'home_page/home_style.css' %}">
+</head>
+<body>
+  <div class="menu-bar">
+    <ul>
+        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+        <li><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i>About</a>
+            <div class="sub-menu">
+                <ul>
+                    <li><a herf="#">Airy</a></li>
+                    <li><a herf="#">Carlos</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="https://github.com/caoxuCarlos/yibi"><i class="fa fa-github" aria-hidden="true"></i>GitHub</a></li>
+        <li><a href="{% url 'message' %}"><i class="fa fa-github" aria-hidden="true"></i>Message</a></li>
+    </ul>
+  </div>
+
+  <h1>Welcome to Yibeee</h1>
+  <h2></h2>
+  <div class="button">
+     <button onclick="transfer">Get started</button>
+  </div>
+</body>
+</html>

@@ -1,102 +1,93 @@
-h1{
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-top: 300px;
-} 
-
-p{
-    text-align: center;
-    margin-bottom: 100px;
-    font-family: Arial, Helvetica, sans-serif;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #000000;
 }
-
-button{
-    margin-left: 700px;
-    width: 120px;
-    height: 20px; 
+.container{
+    width:100%;
+    height: 100%;
+    background: #000000;
 }
-
-body{
-    background-image: url("firspage.jpg");
-    background-position: center;
-    background-size: cover; 
-    box-sizing: border-box; 
-}
-
-
-.logo{
-    padding: 5px 0 0 80px;
-    width: 150px;
-    height: auto;
-}
-
-.menu-bar{
-    background: rgb(41, 41, 41);
-    text-align: center;
-    height: 60px;
-}
-
-.menu-bar .menu{
+.menu ul{
     display: inline-flex;
+    margin: 50px;
+}
+.menu ul li{
     list-style: none;
-    margin-left: 500px;
+    margin-left: 50px;
+    color: aliceblue;
+    cursor: pointer;
 }
-
-.menu-bar .menu li a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
+.logo img{
+    width: 30px;
+    margin-top: -8px;
+    margin-right: 50px;
 }
-.menu-bar .menu li{
-    width: 150px;
-    margin: 2px;
-    margin-left: 40px;
+.menu .active{
+    color: #19dafa;
 }
-
-.menu-bar .fa{
-    margin-right: 5px;
-}
-
-/*.active, .menu-bar .menu li:hover{
-    background: #454545;
-    border-radius:5px;
-}*/
-
-.active{
-    background: #454545;
-    border-radius:3px;
-}
-
-.sub-menu-1{
-    display: none;
-}
-
-.menu-bar .menu li:hover .sub-menu-1{
-    display: block;
+.signup-btn{
+    top: 45px;
+    right: 120px;
     position: absolute;
-    background: rgb(41, 41, 41);
-    margin-top: 15px;
-    margin-left: -15px;
+    text-decoration: none;
+    color: #fff;
+    border:3px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a, #42455a),radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
-
-.menu-bar .menu li .sub-menu-1 .sub:hover{
+.signup-btn span{
     display: block;
-    margin: 3px;
+    border-radius: 20px;
+    padding: 8px 22px;
 }
+.banner{
+    margin-left: 130px;
+    width: 80%;
+    height: 70%;
+    top: 230px;
+    position: absolute;
+    color: #fff;
+}
+.app-text{
+    width: 50%;
+    float: left;
 
-.menu-bar .menu li .sub-menu-1 .sub li:hover{
-    width: 150px;
-    padding: 5px;
-    border-bottom : 1px dotted #ffffff;
-    background: transparent;
-    border-radius: 0;
-    text-align: left;
 }
-
-.menu-bar .menu li:hover .sub-menu-1 .menu li:last-child{
-    border-bottom:none;
+.app-text h1{
+    font-size: 40px;
+    width: 640px;
+    position: relative;
+    margin-left: 100px;
 }
-   
-.menu-bar .menu li:hover .sub-menu-1 .menu li a:hover{
-    color: #e3e3e3;
+.app-text p{
+    width: 650px;
+    font-size: 20px;
+    margin: 30px 0 30px 100px;
+    line-height: 25px;
+    color: rgb(160, 160, 160);
+}
+.app-picture img{
+    width: 80%;
+    padding-left: 400px;
+}
+.start{
+    margin-left: 90px;
+    margin-top: 40px;
+    text-decoration: none;
+    color: #fff;
+    border:3px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a, #42455a),radial-gradient(circle at top left, #fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    width: 130px;
+}
+.start span{
+    display: block;
+    border-radius: 20px;
+    padding: 8px 22px;
 }

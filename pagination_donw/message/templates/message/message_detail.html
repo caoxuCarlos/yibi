@@ -1,0 +1,15 @@
+{% extends 'message/base.html' %}
+{% block content %}
+    {% if object.author == user %}
+        <a href="{% url 'message-update' object.id %}">Update</a>
+        <a href="{% url 'message-delete' object.id %}">Delete</a>
+
+    {% endif %}
+    <h3>{{ object.title }}</h3>
+    <h3><a href="{% url 'user-message' object.author.username %}">{{ object.author }}</a></h3>
+    <h3>{{ object.date_posted }}</h3>
+    <h3>{{ object.email }}</h3>
+    <h3>{{ object.content }}</h3>
+    <h3>--------------</h3>
+    <h3>--------------</h3>
+{% endblock content %}

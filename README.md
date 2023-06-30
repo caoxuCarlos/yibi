@@ -1,4 +1,4 @@
 # yibi
-CaoXu and YangYaqing's work.
+CaoXu's work.
 
 Hahaha
